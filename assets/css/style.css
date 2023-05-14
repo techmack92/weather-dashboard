@@ -4,15 +4,27 @@
 }
 
 #hero {
-    width: 100%;
-    height: 60vh;
     z-index: 1;
 }
 
 #hero .container {
+    width: 100%; 
+    height: 60vh; 
     z-index: 2;
 }
 
 #search-history {
     z-index: 3;
 }
+
+.search-results .content {
+    padding: 30px;
+    background: #e4d50dbe;
+    border-radius: 4px;
+    color: #1194b4;
+}
+
+.search-results h2 {
+    color: rgba(82, 80, 80, 0.384);
+}
+

@@ -15,7 +15,7 @@
 
 <body>
 
-    <section id="hero" class="d-flex flex column justify-content-center align-items-center">
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="container">
             <img src="./assets/images/hero.png" alt="hero photo of generic weather forecast">
         </div>
@@ -23,21 +23,25 @@
 
     <section id="main">
         <section id="search-results" class="search-results">
-            <div class="container d-flex justify-content-start">
+            <div class="container-lg d-flex justify-content-start">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-5">
+                    <div class="col-xl">
                         <div class="content">
                             <div id="search-bar">
                                 <form class="location-input" id="city-form">
-                                    <label>
-                                        <h3>What's the forecast?</h3>
-                                        <input type="text" id="city-input" placeholder="Enter a city">
-                                    </label>
+                                    <div>
+                                        <h1>What's the forecast?</h1><br>
+                                        <input class="form-control" type="text" id="city-input" placeholder="Enter a city">
+                                    </div><br>
+                                    <div class="d-grid gap-2">
+                                        <input class ="submit btn btn-outline-primary" type="submit" id="submit" value="Search">
+                                    </div>
                                     <br>
-                                    <input class ="submit" type="submit" id="submit" value="Search">
                                 </form>
                             </div>
                             <div id="search-history">
+                                <h2>Search History:</h2>
+                            </div>
                         </div>
                     </div>
 
