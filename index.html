@@ -17,15 +17,13 @@
 
     <section id="hero" class="d-flex flex column justify-content-center align-items-center">
         <div class="container">
-            <header>
-                <h1>Weather Dashboard</h1>
-            </header>
+            <img src="./assets/images/hero.png" alt="hero photo of generic weather forecast">
         </div>
     </section>
 
     <section id="main">
         <section id="search-results" class="search-results">
-            <div class="container d-flex justify-content-end">
+            <div class="container d-flex justify-content-start">
                 <div class="row">
                     <div class="col-xl-4 col-lg-5">
                         <div class="content">
@@ -39,14 +37,18 @@
                                     <input class ="submit" type="submit" id="submit" value="Search">
                                 </form>
                             </div>
+                            <div id="search-history">
                         </div>
                     </div>
 
-                    <div class="col">
-                        <section id="current-weather"></section>
-                        <section id="forecast"></section>
-                        <section id="search-history"></section>
+                    <div class="row">
+                        <div id="current-weather"></div>
                     </div>
+
+                    <div class="row">
+                        <div id="forecast"></div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -57,6 +59,12 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
         crossorigin="anonymous">
     </script>
+    <script 
+        src="https://code.jquery.com/jquery-3.7.0.slim.min.js" 
+        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" 
+        crossorigin="anonymous">
+    </script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
