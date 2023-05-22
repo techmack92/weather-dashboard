@@ -21,11 +21,12 @@
         </div>
     </section>
 
+    <!-- Search box & search history-->
     <section id="main">
         <section id="search-results" class="search-results">
-            <div class="container-lg d-flex justify-content-start">
+            <div class="container-xl d-flex justify-content-start">
                 <div class="row">
-                    <div class="col-xl">
+                    <div class="col-lg">
                         <div class="content">
                             <div id="search-bar">
                                 <form class="location-input" id="city-form">
@@ -44,13 +45,26 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div id="current-weather"></div>
-                    </div>
-
-                    <div class="row">
-                        <div id="forecast"></div>
+                    
+                    <!-- Display current weather (1 day) -->
+                    <!-- <div class="container"> -->
+                        <div class="row" id="current-weather">
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">City: <span id="city"></span></h5>
+                                    <p class="card-text">Date: <span id="date"></span></p>
+                                    <img id="icon" src="" alt="Weather Icon">
+                                    <p class="card-text">Temperature: <span id="temperature"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity"></span></p>
+                                    <p class="card-text">Wind Speed: <span id="windspeed"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <!-- Display 5-day forecast -->
+                    <div class="container">
+                        <div class="row" id="forecast"></div>
                     </div>
 
                 </div>
