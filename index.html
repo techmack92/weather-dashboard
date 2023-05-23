@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,18 +16,19 @@
 
 <body>
 
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-        <div class="container">
-            <img src="./assets/images/hero.png" alt="hero photo of generic weather forecast">
-        </div>
+    <section id="hero" class="column justify-content-center align-items-center">
+        <div 
+        class="bg-image" 
+        style="background-image: url('./assets/images/hero.png');
+        height: 650px;">
     </section>
 
     <!-- Search box & search history-->
     <section id="main">
         <section id="search-results" class="search-results">
-            <div class="container-xl d-flex justify-content-start">
+            <div class="container-lg p-5">
                 <div class="row">
-                    <div class="col-lg">
+                    <div class="col-md-5">
                         <div class="content">
                             <div id="search-bar">
                                 <form class="location-input" id="city-form">
@@ -45,13 +47,14 @@
                             </div>
                         </div>
                     </div>
+
                     
                     <!-- Display current weather (1 day) -->
-                    <!-- <div class="container"> -->
+                    <div class="col-md-6">
                         <div class="row" id="current-weather">
-                            <div class="card mt-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">City: <span id="city"></span></h5>
+                            <div class="card mt-4 col-md-12 text-light bg-dark">
+                                <div class="card-body text-center">
+                                    <h2 class="card-title text-secondary">City: <span id="city"></span></h2>
                                     <p class="card-text">Date: <span id="date"></span></p>
                                     <img id="icon" src="" alt="Weather Icon">
                                     <p class="card-text">Temperature: <span id="temperature"></span></p>
@@ -60,10 +63,10 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
+                    </div>
                     
                     <!-- Display 5-day forecast -->
-                    <div class="container">
+                    <div class="col-md-6">
                         <div class="row" id="forecast"></div>
                     </div>
 

@@ -28,3 +28,7 @@
     color: rgba(82, 80, 80, 0.384);
 }
 
+.hide {
+    visibility: hidden;
+}
+

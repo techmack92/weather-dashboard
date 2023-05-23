@@ -25,6 +25,8 @@ form.addEventListener("submit", (event) => {
   // Set up API Key
   const APIKey = "6e4307f49ddd0749f21a1909e4149678";
   fetchWeather(APIKey, city);
+
+  console.log("button was clicked")
 });
 
 
@@ -66,6 +68,7 @@ function fetchWeather(APIKey, city) {
     // Console.log to check the response
     weatherData.then(data => {
         console.log("Weather Data:", data);
+        displayWeather(data);
     }).catch(error => {
         console.log("Error fetching weather data:", error);
     });
@@ -84,15 +87,21 @@ function displayWeather(weatherData) {
     const humidityEl = document.getElementById("humidity");
     const windspeedEl = document.getElementById("windspeed");
 
+    // Convert temperature from Kelvin to Fahrenheit and drops the decimal using Math.floor
+    const tempFahrenheit = Math.trunc(Number(weatherData.main.temp - 273.15) * 9/5 + 32);
+
+    // Convert windspeed from meters per second to miles per hour
+    const windSpeedMPH = Math.trunc(Number(weatherData.wind.speed * 2.23694));
+
     // Update the elements with the weather data
     cityEl.textContent = weatherData.name;
     dateEl.textContent = new Date(weatherData.dt * 1000).toLocaleDateString();
     iconEl.src = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-    temperatureEl.textContent = weatherData.main.temp;
-    humidityEl.textContent = weatherData.main.humidity;
-    windspeedEl.textContent = weatherData.wind.speed;
-} 
+    temperatureEl.textContent = tempFahrenheit.toFixed(2) + " °F";
+    humidityEl.textContent = weatherData.main.humidity + "%";
+    windspeedEl.textContent = windSpeedMPH.toFixed(2) + " MPH";
 
+} 
 
 // Add event listener for search history section
 
