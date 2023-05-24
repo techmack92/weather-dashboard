@@ -18,12 +18,15 @@ This application is used as weather dashboard that stores up to 10 previously se
 + jQuery
 + Bootstrap
 
+## Credits
++ <a href="https://openweathermap.org/">***Weather API***</a>
 
-## Mock-Up
 
-The following snippet shows the web application's appearance and functionality:
+## Demo
 
-![Screenshot of weather dashboard.](./assets/images/planner.png)
+The following illustration shows the web application's appearance and functionality:
+
+![Gif demo of weather dashboard.](./assets/images/Demo.gif)
 
 ## License
 

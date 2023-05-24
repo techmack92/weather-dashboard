@@ -108,7 +108,7 @@ function fetchWeather(APIKey, city) {
     });
 
     //
-    // Fetch weather using coordinates
+    // Fetch current weather using coordinates
     //
     const weatherPromise = coordPromise.then(({lat, lon}) => {
         const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`;
@@ -137,7 +137,7 @@ function fetchWeather(APIKey, city) {
     // Fetch 5-day forecast data
     //
     const forecastPromise = coordPromise.then(({lat, lon}) => {
-        const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=40&appid=${APIKey}`;
+        const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`;
         const forecastResponsePromise = fetch(forecastURL);
         return forecastResponsePromise;
     });
@@ -228,8 +228,11 @@ function displayForecast(forecastData) {
     // Clear existing forecast cards
     forecastEl.innerHTML = "";
 
+    // Filter the forecasts array to keep it a 5-day instead of 5-day/3-hour forecast
+    const filteredForecasts = forecasts.filter((item, index) => index % 8 === 0);
+
     // Use the forecasts array to populate the forecast cards dynamically
-    forecasts.slice(0, 5).forEach(forecast => {
+    filteredForecasts.slice(0, 5).forEach(forecast => {
       const card = document.createElement("div");
       card.classList.add("card", "col-md-2", "text-light", "mt-4", "p-2", "m-2", "forecast");
   
@@ -238,7 +241,7 @@ function displayForecast(forecastData) {
   
       const dateEl = document.createElement("h2");
       dateEl.classList.add("card-text", "text-info", "fs-3");
-      dateEl.textContent = "Date: " + new Date(forecast.dt * 1000).toLocaleDateString();
+      dateEl.textContent = new Date(forecast.dt_txt).toLocaleDateString();
   
       const iconEl = document.createElement("img");
       iconEl.src = `http://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
