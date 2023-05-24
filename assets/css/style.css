@@ -5,6 +5,7 @@
 
 #hero {
     z-index: 1;
+    background-image: url('./assets/images/hero.png');
 }
 
 #hero .container {
@@ -28,7 +29,18 @@
     color: rgba(82, 80, 80, 0.384);
 }
 
-.hide {
-    visibility: hidden;
+#search-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.current-weather {
+    background-color: rgba(0, 0, 0, 0.384);
+}
+
+.forecast {
+    background-color: lightgoldenrodyellow;
 }
 
