@@ -86,7 +86,7 @@ function displaySearchHistory(searchHistory) {
 //
 //
 function fetchWeather(APIKey, city) {
-    const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKey}`;
+    const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKey}`;
     const geoResponsePromise = fetch(geoURL);
 
     // Handles fetch response by checking for errors and parsing the JSON data
